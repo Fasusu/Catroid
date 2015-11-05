@@ -62,12 +62,12 @@ public class DoubleClickOpensViewOnceTest extends TestSuite {
 
 	public static TestSuite suite() {
 		TestSuite suite = new TestSuite(DoubleClickOpensViewOnceTest.class.getName());
-		suite.addTestSuite(MainMenuDoubleClickOpensViewOnceTest.class);
-		suite.addTestSuite(MyProjectsDoubleClickOpensViewOnceTest.class);
+		//suite.addTestSuite(MainMenuDoubleClickOpensViewOnceTest.class);
+		//suite.addTestSuite(MyProjectsDoubleClickOpensViewOnceTest.class);
 		suite.addTestSuite(ProgramMenuActivityDoubleClickOpensViewOnceTest.class);
-		suite.addTestSuite(ProjectActivityDoubleClickOpensViewOnceTest.class);
+		//suite.addTestSuite(ProjectActivityDoubleClickOpensViewOnceTest.class);
 		suite.addTestSuite(ScriptActivityDoubleClickOpensViewOnceTest.class);
-		suite.addTestSuite(ScriptFragmentDoubleClickOpensViewOnceTest.class);
+		//suite.addTestSuite(ScriptFragmentDoubleClickOpensViewOnceTest.class);
 		suite.addTestSuite(LookFragmentDoubleClickOpensViewOnceTest.class);
 
 		return suite;
