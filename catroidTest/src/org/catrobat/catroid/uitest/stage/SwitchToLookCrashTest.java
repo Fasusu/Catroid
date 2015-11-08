@@ -120,10 +120,9 @@ public class SwitchToLookCrashTest extends BaseActivityInstrumentationTestCase<M
 		nyanCatPngFile.delete();
 	}
 
+	/* // Needs refactoring, fails on sdk-16
 	public void testSwitchToLookCrashJPG() throws IOException {
-		assertTrue(true);
 
-		/* // Needs refactoring, fails on sdk-16
 		String manImagePath = "";
 		String manImage = "man_crash";
 		String manImageJpg = "man_crash.jpg";
@@ -172,8 +171,8 @@ public class SwitchToLookCrashTest extends BaseActivityInstrumentationTestCase<M
 		UiTestUtils.clickOnActionBar(solo, R.id.button_play);
 		solo.waitForActivity(StageActivity.class.getSimpleName());
 		solo.sleep(5000);
-		nyanCatPngFile.delete();*/
-	}
+		nyanCatPngFile.delete();
+	}*/
 
 	private void writeBufferToFile(InputStream inputStream, String imageFilePath) throws IOException {
 		FileOutputStream nyanCatFileOutputStream;
