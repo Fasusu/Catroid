@@ -96,13 +96,13 @@ task commandlineAdbRunTests << {
         command.addAll(['-e', 'package', System.properties['testPackage'].toString()])
     }
 
-    //if(System.properties['useEspressoTests']) {
-    //    println('################################## Using Espresso ##################################');
-    //    command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
-    //} else {
-    //    println('################################## Using Polidea ##################################');
-    command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
-    //}
+    if(System.properties['useEspressoTests']) {
+        println('################################## Using Espresso ##################################');
+        command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
+    } else {
+        println('################################## Using Polidea ##################################');
+        command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
+    }
     executeShellCommand(command)
 
     def adbPath = project.getBuildDir().getPath()+"/adb"
