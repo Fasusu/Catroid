@@ -96,7 +96,7 @@ task commandlineAdbRunTests << {
         command.addAll(['-e', 'package', System.properties['testPackage'].toString()])
     }
 
-    if(System.properties['useEspressoTests']) {
+    if(System.properties['useEspressoTests'] == 'true') {
         println('################################## Using Espresso ##################################');
         command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
     } else {
