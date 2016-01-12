@@ -82,6 +82,10 @@ android {
             buildConfigField "boolean", "FEATURE_ARDUINO_ENABLED", "true"
         }
     }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+    }
 }
 
 ext {
