@@ -97,7 +97,7 @@ task commandlineAdbRunTests << {
     }
 
     if (Boolean.valueOf(System.properties['useEspressoTests'])) {
-        println('################################## Using Espresso ##################################');
+        println('################################## Using Espresso ################################## testRunner: ' + ["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()]);
         command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
     } else {
         println('################################## Using Polidea ################################## ');
