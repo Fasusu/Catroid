@@ -96,9 +96,11 @@ task commandlineAdbRunTests << {
         command.addAll(['-e', 'package', System.properties['testPackage'].toString()])
     }
 
+    // [org.catrobat.catroid.test/pl.polidea.instrumentation.PolideaInstrumentationTestRunner]
+
     if (Boolean.valueOf(System.properties['useEspressoTests'])) {
-        println('################################## Using Espresso ################################## testRunner: ' + ["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()]);
-        command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
+        println('################################## Using Espresso ################################## testRunner: ' + ["${android.defaultConfig.testApplicationId}/android.support.test.runner.AndroidJUnitRunner".toString()]);
+        command.addAll(["${android.defaultConfig.testApplicationId}/android.support.test.runner.AndroidJUnitRunner".toString()])
     } else {
         println('################################## Using Polidea ################################## ');
         command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
