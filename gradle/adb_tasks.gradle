@@ -96,11 +96,11 @@ task commandlineAdbRunTests << {
         command.addAll(['-e', 'package', System.properties['testPackage'].toString()])
     }
 
-    if(Boolean.valueOf(System.properties['useEspressoTests'])) {
-        println('################################## Using Espresso ##################################');
+    if (Boolean.valueOf(System.properties['useEspressoTests'])) {
+        println('################################## Using Espresso ##################################' + System.properties['useEspressoTests']);
         command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
     } else {
-        println('################################## Using Polidea ##################################');
+        println('################################## Using Polidea ################################## ' + System.properties['useEspressoTests']);
         command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
     }
     executeShellCommand(command)
