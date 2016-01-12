@@ -20,11 +20,17 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 package org.catrobat.catroid.uitestespresso.example;
 
-/**
- * Created by Jakob on 12.01.2016.
- */
-public class ExampleTest {
+
+import org.catrobat.catroid.ui.MainMenuActivity;
+import org.catrobat.catroid.uitest.util.BaseActivityInstrumentationTestCase;
+
+public class ExampleTest extends BaseActivityInstrumentationTestCase<MainMenuActivity> {
+
+    public ExampleTest() {
+        super(MainMenuActivity.class);
+    }
+
+
 }
