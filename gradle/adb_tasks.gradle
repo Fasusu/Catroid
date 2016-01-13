@@ -102,14 +102,14 @@ task commandlineAdbRunTests << {
         String[] testPackageParts = testPackage.split("[.]+")
 
         println "TestPackageParts: $testPackageParts"
-        //println "Default Testrunner: ${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()
-        //println "Espresso Testrunner: ${android.defaultConfig.testApplicationId}/android.support.test.runner.AndroidJUnitRunner"
+        println "Default Testrunner: ${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()
+        println "Espresso Testrunner: ${android.defaultConfig.testApplicationId}/android.support.test.runner.AndroidJUnitRunner"
 
         if (testPackageParts && testPackageParts[3] == "uitestespresso") {
             println "Using espresso Testrunner: "
             //android.support.test.runner.AndroidJUnitRunner
             //command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
-            //command.addAll(["${android.defaultConfig.testApplicationId}/android.support.test.runner.AndroidJUnitRunner".toString()])
+            command.addAll(["${android.defaultConfig.testApplicationId}/android.support.test.runner.AndroidJUnitRunner".toString()])
         } else {
             println "Using default testrunner"
             command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
