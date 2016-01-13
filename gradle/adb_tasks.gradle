@@ -98,13 +98,15 @@ task commandlineAdbRunTests << {
         // parse parameter to determine if espresso test runner is needed
         String testPackage = System.properties['testPackage'].toString()
 
-        println('############################# TestPackage Parameter set to: ' + testPackage + ' #############################');
+        println "### Selected TestPackage: $testPackage"
         String[] testPackageParts = testPackage.split('.')
 
+        println "TestPackageParts: $testPackageParts"
+
         if(testPackageParts)
-            println '${testPackageParts[0]}'
+            println "### TestPackage FirstPart: ${testPackageParts[0]}"
         else
-            println "fail######"
+            println "### Fail!"
 
 //        for (int i = 0; i < testPackageParts.length; i++)
 //            println(testPackageParts[i]);
