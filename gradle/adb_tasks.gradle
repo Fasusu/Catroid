@@ -94,17 +94,27 @@ task commandlineAdbRunTests << {
     }
     if (System.properties['testPackage']){
         command.addAll(['-e', 'package', System.properties['testPackage'].toString()])
+
+        // parse parameter to determine if espresso test runner is needed
+        String testPackage = System.properties['testClass'];
+        println('############################# TestPackage Parameter set to: ' + testPackage + ' #############################');
+
+        
     }
 
+    /**
     // [org.catrobat.catroid.test/pl.polidea.instrumentation.PolideaInstrumentationTestRunner]
-
-    if (Boolean.valueOf(System.properties['useEspressoTests'])) {
-        println('################################## Using Espresso ################################## testRunner: ' + ["${android.defaultConfig.testApplicationId}/android.support.test.runner.AndroidJUnitRunner".toString()]);
-        command.addAll(["${android.defaultConfig.testApplicationId}/android.support.test.runner.AndroidJUnitRunner".toString()])
-    } else {
-        println('################################## Using Polidea ################################## ');
+    if (System.properties['testRunner'] == 'espresso') {
+        println('Using TestRunner: ' + ${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner});
         command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
-    }
+    } else if(System.properties['useEspressoTests'] == 'robotium') {
+        println('Using TestRunner: ' + ${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner});
+        command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
+    } else {
+        println('Using TestRunner: ' + ${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner});
+        command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
+    }*/
+
     executeShellCommand(command)
 
     def adbPath = project.getBuildDir().getPath()+"/adb"
