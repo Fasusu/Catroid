@@ -101,7 +101,7 @@ task commandlineAdbRunTests << {
         println('############################# TestPackage Parameter set to: ' + testPackage + ' #############################');
         String[] testPackageParts = testPackage.split('.')
 
-        println ("first part of packageString: " + testPackageParts[0]);
+        println "first part of packageString: ${testPackageParts[0]}"
 
         testPackageParts.each {
             println 'hello foreach'
