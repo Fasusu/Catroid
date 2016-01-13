@@ -102,14 +102,16 @@ task commandlineAdbRunTests << {
         String[] testPackageParts = testPackage.split("[.]+")
 
         println "TestPackageParts: $testPackageParts"
+        println "Default Testrunner: ${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()
 
-        if(testPackageParts)
-            println "### TestPackage FirstPart: ${testPackageParts[0]}"
-        else
-            println "### Fail!"
-
-//        for (int i = 0; i < testPackageParts.length; i++)
-//            println(testPackageParts[i]);
+        if (testPackageParts && testPackageParts[3] == "uitestespresso") {
+            println "Using espresso testrunner"
+            //android.support.test.runner.AndroidJUnitRunner
+            command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
+        } else {
+            println "Using default testrunner"
+            command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
+        }
 
     }
 
@@ -125,7 +127,6 @@ task commandlineAdbRunTests << {
         println('Using TestRunner: ' + ${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner});
         command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
     }*/
-    command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
     executeShellCommand(command)
 
     def adbPath = project.getBuildDir().getPath()+"/adb"
