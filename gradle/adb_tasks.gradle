@@ -103,9 +103,8 @@ task commandlineAdbRunTests << {
 
         println "first part of packageString: ${testPackageParts[0]}"
 
-        testPackageParts.each {
-            println 'hello foreach'
-        }
+        for (int i = 0; i < testPackageParts.length; i++)
+            println(testPackageParts[i]);
 
     }
 
