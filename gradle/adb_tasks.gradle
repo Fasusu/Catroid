@@ -101,8 +101,10 @@ task commandlineAdbRunTests << {
         println('############################# TestPackage Parameter set to: ' + testPackage + ' #############################');
         def testPackageParts = testPackage.split('.')
 
+        println testPackageParts
+
         testPackageParts.each {
-            println 'found a part ${it}'
+            println 'hello foreach'
         }
 
     }
