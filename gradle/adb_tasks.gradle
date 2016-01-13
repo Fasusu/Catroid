@@ -97,9 +97,11 @@ task commandlineAdbRunTests << {
 
         // parse parameter to determine if espresso test runner is needed
         String testPackage = System.properties['testClass'];
-        println('############################# TestPackage Parameter set to: ' + testPackage + ' #############################');
 
-        
+        if(testPackage != null && !testPackage.isEmpty() && testPackage != 'null') {
+            println('############################# TestPackage Parameter set to: ' + testPackage + ' #############################');
+            
+        }
     }
 
     /**
