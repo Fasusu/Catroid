@@ -107,12 +107,14 @@ task commandlineAdbRunTests << {
         if (testPackageParts && testPackageParts[3] == "uitestespresso") {
             println "Using espresso testrunner"
             //android.support.test.runner.AndroidJUnitRunner
-            command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
+            command.addAll(["android.support.test.runner.AndroidJUnitRunner"])
         } else {
             println "Using default testrunner"
             command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
         }
 
+    } else {
+        command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
     }
 
     /**
