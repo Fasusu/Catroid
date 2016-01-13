@@ -101,7 +101,10 @@ task commandlineAdbRunTests << {
         println('############################# TestPackage Parameter set to: ' + testPackage + ' #############################');
         String[] testPackageParts = testPackage.split('.')
 
-        println "first part of packageString: ${testPackageParts[0]}"
+        if(testPackageParts)
+            println '${testPackageParts[0]}'
+        else
+            println "fail######"
 
 //        for (int i = 0; i < testPackageParts.length; i++)
 //            println(testPackageParts[i]);
