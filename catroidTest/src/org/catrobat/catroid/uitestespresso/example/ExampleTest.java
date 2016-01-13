@@ -36,8 +36,8 @@ public class ExampleTest extends BaseActivityInstrumentationTestCase<MainMenuAct
     }
 
     //@Before
-    /*public void setUp() throws Exception {
+    public void setUp() throws Exception {
         super.setUp();
         mActivity = getActivity();
-    }*/
+    }
 }
