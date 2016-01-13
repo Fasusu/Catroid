@@ -25,12 +25,19 @@ package org.catrobat.catroid.uitestespresso.example;
 
 import org.catrobat.catroid.ui.MainMenuActivity;
 import org.catrobat.catroid.uitest.util.BaseActivityInstrumentationTestCase;
+import org.junit.Before;
 
 public class ExampleTest extends BaseActivityInstrumentationTestCase<MainMenuActivity> {
+
+    private MainMenuActivity mActivity;
 
     public ExampleTest() {
         super(MainMenuActivity.class);
     }
 
-
+    @Before
+    public void setUp() throws Exception {
+        super.setUp();
+        mActivity = getActivity();
+    }
 }
