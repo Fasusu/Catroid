@@ -99,7 +99,7 @@ task commandlineAdbRunTests << {
         String testPackage = System.properties['testPackage'].toString()
 
         println "### Selected TestPackage: $testPackage"
-        String[] testPackageParts = testPackage.split('.')
+        String[] testPackageParts = testPackage.split("[.]+")
 
         println "TestPackageParts: $testPackageParts"
 
