@@ -99,7 +99,7 @@ task commandlineAdbRunTests << {
         String testPackage = System.properties['testPackage'];
 
         println('############################# TestPackage Parameter set to: ' + testPackage + ' #############################');
-        def testPackageParts = testPackage.split('.')
+        String[] testPackageParts = testPackage.split('.')
 
         println testPackageParts
 
