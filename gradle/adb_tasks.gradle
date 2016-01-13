@@ -103,8 +103,8 @@ task commandlineAdbRunTests << {
 
         println "first part of packageString: ${testPackageParts[0]}"
 
-        for (int i = 0; i < testPackageParts.length; i++)
-            println(testPackageParts[i]);
+//        for (int i = 0; i < testPackageParts.length; i++)
+//            println(testPackageParts[i]);
 
     }
 
