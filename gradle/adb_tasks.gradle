@@ -96,12 +96,15 @@ task commandlineAdbRunTests << {
         command.addAll(['-e', 'package', System.properties['testPackage'].toString()])
 
         // parse parameter to determine if espresso test runner is needed
-        String testPackage = System.properties['testClass'];
+        def testPackage = System.properties['testClass'];
 
-        if(testPackage != null && !testPackage.isEmpty() && testPackage != 'null') {
-            println('############################# TestPackage Parameter set to: ' + testPackage + ' #############################');
-            
+        println('############################# TestPackage Parameter set to: ' + testPackage + ' #############################');
+        def testPackageParts = testPackage.split('.')
+
+        testPackageParts.each {
+            println testPackageParts[$it]
         }
+
     }
 
     /**
