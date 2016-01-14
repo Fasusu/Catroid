@@ -194,6 +194,8 @@ android {
             String testPackage = System.properties['testPackage'].toString()
             String[] testPackageParts = testPackage.split("[.]+")
 
+            println "TestPackagePart 3: " + testPackageParts[3]
+
             if (testPackageParts && testPackageParts[3] == "uitestespresso") {
                 println "Using espresso Testrunner:"
                 testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
