@@ -194,7 +194,8 @@ android {
             // parse parameter to determine if espresso test runner is needed
             String testPackage = System.properties['testPackage'].toString()
             String[] testPackageParts = testPackage.split("[.]+")
-
+            println "ArrayLength: " + testPackageParts.size()
+            
             //println "TestPackagePart 3: " + testPackageParts[3]
 
             /*if (testPackageParts && testPackageParts[3] == "uitestespresso") {
