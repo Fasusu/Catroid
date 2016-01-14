@@ -184,14 +184,27 @@ android {
         targetSdkVersion 22
         applicationId 'org.catrobat.catroid'
         testApplicationId "org.catrobat.catroid.test"
-
-        //default
+//default
         testInstrumentationRunner 'pl.polidea.instrumentation.PolideaInstrumentationTestRunner'
+        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
 
-        if ($testPackage){
+        ext.systemProperties = System.properties
+        println "Ext Sytem prop: ${systemProperties.testPackage}"
+
+        println "### testPackage: ${System.properties['testPackage']}"
+        println "### testPackage: ${System.properties['testPackage'].toString()}"
+        println "### testPackage: " + System.properties['testPackage']
+        println "### testPackage: " + System.properties['testPackage'].toString()
+        println "### testPAckage: $testPackage"
+
+
+        if (System.properties['testPackage'].toString()){
+
+            // parse parameter to determine if espresso test runner is needed
+            String testPackage = System.properties['testPackage'].toString()
 
             println "### Selected TestPackage: $testPackage"
-            String[] testPackageParts = $testPackage.split("[.]+")
+            String[] testPackageParts = testPackage.split("[.]+")
 
             if (testPackageParts && testPackageParts[3] == "uitestespresso") {
                 println "Using espresso Testrunner: "
