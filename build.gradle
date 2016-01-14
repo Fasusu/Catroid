@@ -184,9 +184,9 @@ android {
         targetSdkVersion 22
         applicationId 'org.catrobat.catroid'
         testApplicationId "org.catrobat.catroid.test"
-//default
+
+        //default
         testInstrumentationRunner 'pl.polidea.instrumentation.PolideaInstrumentationTestRunner'
-        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
 
         if (System.properties['testPackage'].toString()){
 
