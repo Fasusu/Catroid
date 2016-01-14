@@ -188,9 +188,6 @@ android {
         testInstrumentationRunner 'pl.polidea.instrumentation.PolideaInstrumentationTestRunner'
         testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
 
-        ext.systemProperties = System.properties
-        println "Ext Sytem prop: ${systemProperties.testPackage}"
-
         println "### testPackage: ${System.properties['testPackage']}"
         println "### testPackage: ${System.properties['testPackage'].toString()}"
         println "### testPackage: " + System.properties['testPackage']
