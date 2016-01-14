@@ -188,12 +188,6 @@ android {
         testInstrumentationRunner 'pl.polidea.instrumentation.PolideaInstrumentationTestRunner'
         testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
 
-        println "### testPackage: ${System.properties['testPackage']}"
-        println "### testPackage: ${System.properties['testPackage'].toString()}"
-        println "### testPackage: " + System.properties['testPackage']
-        println "### testPackage: " + System.properties['testPackage'].toString()
-
-
         if (System.properties['testPackage'].toString()){
 
             // parse parameter to determine if espresso test runner is needed
