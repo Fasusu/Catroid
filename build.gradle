@@ -186,8 +186,9 @@ android {
         testApplicationId "org.catrobat.catroid.test"
 //default
         testInstrumentationRunner 'pl.polidea.instrumentation.PolideaInstrumentationTestRunner'
+        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
 
-        if (System.properties['testPackage']){
+        /*if (System.properties['testPackage']){
 
             // parse parameter to determine if espresso test runner is needed
             String testPackage = System.properties['testPackage'].toString()
@@ -199,7 +200,7 @@ android {
                 //println "Using espresso Testrunner: "
                 testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
             }
-        }
+        }*/
 
         versionCode 27
         println "VersionCode is " + versionCode
