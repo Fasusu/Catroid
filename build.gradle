@@ -200,6 +200,8 @@ android {
             }
         }
 
+        println "Chosen Tesrunner: " + testInstrumentationRunner
+
         versionCode 27
         println "VersionCode is " + versionCode
         versionName "0.9.20"
