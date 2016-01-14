@@ -189,7 +189,7 @@ android {
         testInstrumentationRunner 'pl.polidea.instrumentation.PolideaInstrumentationTestRunner'
         testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
 
-        /*if (System.properties['testPackage'].toString()){
+        if (System.properties['testPackage'].toString()){
 
             // parse parameter to determine if espresso test runner is needed
             String testPackage = System.properties['testPackage'].toString()
@@ -197,13 +197,13 @@ android {
 
             println "TestPackagePart 3: " + testPackageParts[3]
 
-            if (testPackageParts && testPackageParts[3] == "uitestespresso") {
+            /*if (testPackageParts && testPackageParts[3] == "uitestespresso") {
                 println "Using espresso Testrunner:"
                 testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
-            }
+            }*/
         }
 
-        println "Chosen Tesrunner: " + testInstrumentationRunner*/
+        println "Chosen Tesrunner: " + testInstrumentationRunner
 
         versionCode 27
         println "VersionCode is " + versionCode
