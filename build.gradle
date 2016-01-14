@@ -187,7 +187,7 @@ android {
 //default
         testInstrumentationRunner 'pl.polidea.instrumentation.PolideaInstrumentationTestRunner'
         testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
-        printl "### testPackage: " + System.properties['testPackage'].toString()
+        println "### testPackage: " + System.properties['testPackage'].toString()
 
         if (System.properties['testPackage'].toString()){
 
