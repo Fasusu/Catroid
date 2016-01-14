@@ -195,7 +195,6 @@ android {
         println "### testPackage: ${System.properties['testPackage'].toString()}"
         println "### testPackage: " + System.properties['testPackage']
         println "### testPackage: " + System.properties['testPackage'].toString()
-        println "### testPAckage: $testPackage"
 
 
         if (System.properties['testPackage'].toString()){
