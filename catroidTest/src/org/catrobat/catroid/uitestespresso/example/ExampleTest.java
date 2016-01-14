@@ -23,11 +23,17 @@
 package org.catrobat.catroid.uitestespresso.example;
 
 
+import android.test.ActivityInstrumentationTestCase2;
+
+import org.catrobat.catroid.R;
 import org.catrobat.catroid.ui.MainMenuActivity;
-import org.catrobat.catroid.uitest.util.BaseActivityInstrumentationTestCase;
 import org.junit.Before;
 
-public class ExampleTest extends BaseActivityInstrumentationTestCase<MainMenuActivity> {
+import static android.support.test.espresso.Espresso.*;
+import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.matcher.ViewMatchers.withId;
+
+public class ExampleTest extends ActivityInstrumentationTestCase2<MainMenuActivity> {
 
     private MainMenuActivity mActivity;
 
@@ -35,9 +41,20 @@ public class ExampleTest extends BaseActivityInstrumentationTestCase<MainMenuAct
         super(MainMenuActivity.class);
     }
 
-    //@Before
+    @Before
     public void setUp() throws Exception {
         super.setUp();
+        // injectInstrumentation(InstrumentationRegistry.getInstrumentation());
         mActivity = getActivity();
     }
+
+    public void testChangeText_sameActivity() {
+        // Type text and then press the button.
+        //onView(withId()).perform(typeText(STRING_TO_BE_TYPED), closeSoftKeyboard());
+        //onView(withId(R.id.changeTextButton)).perform(click());
+        onView(withId(R.id.bottom_bar)).perform(click());
+        // Check that the text was changed.
+
+    }
+
 }

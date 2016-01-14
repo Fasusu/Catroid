@@ -28,7 +28,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.0.1'
+        classpath 'com.android.tools.build:gradle:1.3.0'
         classpath 'com.jakewharton.sdkmanager:gradle-plugin:0.12.+'
     }
 }
@@ -184,7 +184,27 @@ android {
         targetSdkVersion 22
         applicationId 'org.catrobat.catroid'
         testApplicationId "org.catrobat.catroid.test"
-        testInstrumentationRunner 'pl.polidea.instrumentation.PolideaInstrumentationTestRunner'
+
+        if (System.properties['testPackage']){
+
+            // parse parameter to determine if espresso test runner is needed
+            String testPackage = System.properties['testPackage'].toString()
+
+            println "### Selected TestPackage: $testPackage"
+            String[] testPackageParts = testPackage.split("[.]+")
+
+            if (testPackageParts && testPackageParts[3] == "uitestespresso") {
+                println "Using espresso Testrunner: "
+                testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+            } else {
+                println "Using default testrunner"
+                testInstrumentationRunner 'pl.polidea.instrumentation.PolideaInstrumentationTestRunner'
+            }
+
+        } else {
+            testInstrumentationRunner 'pl.polidea.instrumentation.PolideaInstrumentationTestRunner'
+        }
+
         versionCode 27
         println "VersionCode is " + versionCode
         versionName "0.9.20"

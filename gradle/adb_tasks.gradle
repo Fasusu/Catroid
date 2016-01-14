@@ -94,7 +94,7 @@ task commandlineAdbRunTests << {
     }
     if (System.properties['testPackage']){
         command.addAll(['-e', 'package', System.properties['testPackage'].toString()])
-
+/*
         // parse parameter to determine if espresso test runner is needed
         String testPackage = System.properties['testPackage'].toString()
 
@@ -116,9 +116,10 @@ task commandlineAdbRunTests << {
             command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
         }
 
-    } else {
-        command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
-    }
+    } else {*/
+        }
+
+    command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
 
     executeShellCommand(command)
 
