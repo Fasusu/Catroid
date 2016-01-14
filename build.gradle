@@ -189,7 +189,7 @@ android {
         testInstrumentationRunner 'pl.polidea.instrumentation.PolideaInstrumentationTestRunner'
         testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
 
-        if (System.properties['testPackage'].toString()){
+        if (System.properties['testPackage']){
 
             // parse parameter to determine if espresso test runner is needed
             String testPackage = System.properties['testPackage'].toString()
