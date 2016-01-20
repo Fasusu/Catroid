@@ -76,6 +76,10 @@ public class InternToken {
 		return internTokenType == InternTokenType.FUNCTION_PARAMETER_DELIMITER;
 	}
 
+	public boolean isFunctionParameterTypeDelimiter() {
+		return internTokenType == InternTokenType.FUNCTION_PARAMETER_TYPE_DELIMITER;
+	}
+
 	public boolean isFunctionName() {
 		return internTokenType == InternTokenType.FUNCTION_NAME;
 	}

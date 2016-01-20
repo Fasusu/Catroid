@@ -843,8 +843,8 @@
     <string name="formula_editor_function_min_parameter">(0,1)</string>
     <string name="formula_editor_function_true">TRUE</string>
     <string name="formula_editor_function_false">FALSE</string>
-    <string name="formula_editor_function_length">length</string>
-    <string name="formula_editor_function_length_parameter">(\'hello world\')</string>
+    <string name="formula_editor_function_length_of">length_of</string>
+    <string name="formula_editor_function_length_of_parameter">(\'text\' / *list name*)</string>
     <string name="formula_editor_function_letter">letter</string>
     <string name="formula_editor_function_letter_parameter">(1,\'hello world\')</string>
     <string name="formula_editor_function_join">join</string>
@@ -930,8 +930,6 @@
     <string name="formula_editor_sensor_face_size">face_size</string>
     <string name="formula_editor_sensor_face_x_position">face_x_position</string>
     <string name="formula_editor_sensor_face_y_position">face_y_position</string>
-    <string name="formula_editor_function_number_of_items">number_of_items</string>
-    <string name="formula_editor_function_number_of_items_parameter">(*list name*)</string>
 
     <plurals name="formula_editor_data_fragment_context_action_item_selected">
         <item quantity="one">Item selected!</item>

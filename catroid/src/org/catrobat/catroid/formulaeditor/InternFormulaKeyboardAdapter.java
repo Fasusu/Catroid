@@ -121,10 +121,8 @@ public class InternFormulaKeyboardAdapter {
 			case R.string.formula_editor_function_letter:
 				return buildDoubleParameterFunction(Functions.LETTER, InternTokenType.NUMBER, "1",
 						InternTokenType.STRING, "hello world");
-			case R.string.formula_editor_function_length:
-				return buildSingleParameterFunction(Functions.LENGTH, InternTokenType.STRING, "hello world");
-			case R.string.formula_editor_function_number_of_items:
-				return buildSingleParameterFunction(Functions.NUMBER_OF_ITEMS, InternTokenType.USER_LIST, "list name");
+			case R.string.formula_editor_function_length_of:
+				return buildSingleMixedStringOrUserListParameterFunction(Functions.LENGTH_OF);
 			case R.string.formula_editor_function_join:
 				return buildDoubleParameterFunction(Functions.JOIN, InternTokenType.STRING, "hello",
 						InternTokenType.STRING, " world");
@@ -345,6 +343,17 @@ public class InternFormulaKeyboardAdapter {
 		returnList.add(new InternToken(InternTokenType.FUNCTION_NAME, function.name()));
 		returnList.add(new InternToken(InternTokenType.FUNCTION_PARAMETERS_BRACKET_OPEN));
 		returnList.add(new InternToken(firstParameter, parameterNumberValue));
+		returnList.add(new InternToken(InternTokenType.FUNCTION_PARAMETERS_BRACKET_CLOSE));
+		return returnList;
+	}
+
+	private List<InternToken> buildSingleMixedStringOrUserListParameterFunction(Functions function) {
+		List<InternToken> returnList = new LinkedList<InternToken>();
+		returnList.add(new InternToken(InternTokenType.FUNCTION_NAME, function.name()));
+		returnList.add(new InternToken(InternTokenType.FUNCTION_PARAMETERS_BRACKET_OPEN));
+		returnList.add(new InternToken(InternTokenType.STRING, "Text"));
+		returnList.add(new InternToken(InternTokenType.FUNCTION_PARAMETER_TYPE_DELIMITER, "/"));
+		returnList.add(new InternToken(InternTokenType.USER_LIST, "User List"));
 		returnList.add(new InternToken(InternTokenType.FUNCTION_PARAMETERS_BRACKET_CLOSE));
 		return returnList;
 	}

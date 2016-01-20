@@ -368,8 +368,13 @@ public class FormulaElement implements Serializable {
 				return 0d;
 			case LETTER:
 				return interpretFunctionLetter(right, left);
-			case LENGTH:
-				return interpretFunctionLength(left, sprite);
+			case LENGTH_OF: {
+				if(leftChild.type == ElementType.USER_LIST) {
+					return interpretFunctionNumberOfItems(left, sprite);
+				} else {
+					return interpretFunctionLength(left, sprite);
+				}
+			}
 			case JOIN:
 				return interpretFunctionJoin(sprite);
 			case ARDUINODIGITAL:
@@ -394,8 +399,6 @@ public class FormulaElement implements Serializable {
 				return interpretFunctionListItem(left, sprite);
 			case CONTAINS:
 				return interpretFunctionContains(right, sprite);
-			case NUMBER_OF_ITEMS:
-				return interpretFunctionNumberOfItems(left, sprite);
 		}
 		return 0d;
 	}

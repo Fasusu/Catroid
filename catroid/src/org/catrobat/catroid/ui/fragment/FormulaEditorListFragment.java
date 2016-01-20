@@ -78,7 +78,7 @@ public class FormulaEditorListFragment extends ListFragment implements Dialog.On
 			R.string.formula_editor_function_arctan, R.string.formula_editor_function_exp,
 			R.string.formula_editor_function_floor, R.string.formula_editor_function_ceil,
 			R.string.formula_editor_function_max, R.string.formula_editor_function_min,
-			R.string.formula_editor_function_length, R.string.formula_editor_function_number_of_items, R.string.formula_editor_function_letter,
+			R.string.formula_editor_function_length_of, R.string.formula_editor_function_letter,
 			R.string.formula_editor_function_join, R.string.formula_editor_function_list_item, R.string.formula_editor_function_contains};
 
 	private static final int[] FUNCTIONS_PARAMETERS = {R.string.formula_editor_function_sin_parameter,
@@ -91,7 +91,7 @@ public class FormulaEditorListFragment extends ListFragment implements Dialog.On
 			R.string.formula_editor_function_arctan_parameter, R.string.formula_editor_function_exp_parameter,
 			R.string.formula_editor_function_floor_parameter, R.string.formula_editor_function_ceil_parameter,
 			R.string.formula_editor_function_max_parameter, R.string.formula_editor_function_min_parameter,
-			R.string.formula_editor_function_length_parameter, R.string.formula_editor_function_number_of_items_parameter, R.string.formula_editor_function_letter_parameter,
+			R.string.formula_editor_function_length_of_parameter, R.string.formula_editor_function_letter_parameter,
 			R.string.formula_editor_function_join_parameter, R.string.formula_editor_function_list_item_parameter,
 			R.string.formula_editor_function_contains_parameter};
 

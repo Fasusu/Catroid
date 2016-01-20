@@ -67,8 +67,7 @@ public class InternToExternGenerator {
 		INTERN_EXTERN_LANGUAGE_CONVERTER_MAP.put(Functions.MIN.name(), R.string.formula_editor_function_min);
 		INTERN_EXTERN_LANGUAGE_CONVERTER_MAP.put(Functions.TRUE.name(), R.string.formula_editor_function_true);
 		INTERN_EXTERN_LANGUAGE_CONVERTER_MAP.put(Functions.FALSE.name(), R.string.formula_editor_function_false);
-		INTERN_EXTERN_LANGUAGE_CONVERTER_MAP.put(Functions.LENGTH.name(), R.string.formula_editor_function_length);
-		INTERN_EXTERN_LANGUAGE_CONVERTER_MAP.put(Functions.NUMBER_OF_ITEMS.name(), R.string.formula_editor_function_number_of_items);
+		INTERN_EXTERN_LANGUAGE_CONVERTER_MAP.put(Functions.LENGTH_OF.name(), R.string.formula_editor_function_length_of);
 		INTERN_EXTERN_LANGUAGE_CONVERTER_MAP.put(Functions.LETTER.name(), R.string.formula_editor_function_letter);
 		INTERN_EXTERN_LANGUAGE_CONVERTER_MAP.put(Functions.JOIN.name(), R.string.formula_editor_function_join);
 
@@ -229,6 +228,8 @@ public class InternToExternGenerator {
 				return ")";
 			case FUNCTION_PARAMETER_DELIMITER:
 				return ",";
+			case FUNCTION_PARAMETER_TYPE_DELIMITER:
+				return "/";
 			case USER_VARIABLE:
 				return "\"" + internToken.getTokenStringValue() + "\"";
 			case USER_LIST:
