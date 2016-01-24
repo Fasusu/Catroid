@@ -120,6 +120,11 @@ task commandlineAdbRunTests << {
     }
 
     command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
+
+    println "Printing COMMAND:"
+    println "Command: " + command
+    println "Command END"
+
     executeShellCommand(command)
 
     def adbPath = project.getBuildDir().getPath()+"/adb"
