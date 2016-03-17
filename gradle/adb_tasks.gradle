@@ -56,13 +56,29 @@ def getAndroidDevice() {
     return deviceId.toString()
 }
 
+def isEspressoTestPackage(String testPackage) {
+
+        // parse parameter to determine if espresso test runner is needed
+        String[] testPackageParts = testPackage.split('[.]')
+
+        if (testPackageParts && testPackageParts.size() > 3 && testPackageParts[3] == "uitestespresso") {
+            return true
+        } else {
+            return false
+        }
+}
+
 def executeShellCommand(command) {
     println("executing: ${command}")
     def process = new ProcessBuilder(command).redirectErrorStream(true).start()
     process.inputStream.eachLine {println it}
     process.waitFor()
-    if(process.exitValue() != 0)
+
+    if (isEspressoTestPackage(System.properties['testPackage'].toString()) && process.exitValue() != 0 && process.exitValue() != 1){
         throw new GradleScriptException("adb exited with exit status ${process.exitValue()}", null)
+    } else if (process.exitValue() != 0) {
+        throw new GradleScriptException("adb exited with exit status ${process.exitValue()}", null)
+    }
 }
 
 def createAdbInstallTask(variant) {
@@ -99,9 +115,9 @@ task commandlineAdbRunTests << {
     command.addAll(["${android.defaultConfig.testApplicationId}/${android.defaultConfig.testInstrumentationRunner}".toString()])
     executeShellCommand(command)
 
-    def adbPath = project.getBuildDir().getPath()+"/adb"
-    def adbTestPath = adbPath+"/test"
-    def adbScreenshotsPath = adbPath+"/robotium_screenshots"
+    def adbPath = project.getBuildDir().getPath() + "/adb"
+    def adbTestPath = adbPath + "/test"
+    def adbScreenshotsPath = adbPath + "/robotium_screenshots"
     file(adbTestPath).mkdirs()
     file(adbScreenshotsPath).mkdirs()
 
