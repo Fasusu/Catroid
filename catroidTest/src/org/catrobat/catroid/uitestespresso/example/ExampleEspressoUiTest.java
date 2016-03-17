@@ -24,10 +24,14 @@ package org.catrobat.catroid.uitestespresso.example;
 
 
 import android.support.test.InstrumentationRegistry;
+import android.support.test.runner.AndroidJUnit4;
 import android.test.ActivityInstrumentationTestCase2;
 import org.catrobat.catroid.R;
 import org.catrobat.catroid.ui.MainMenuActivity;
 import org.catrobat.catroid.uitest.util.UiTestUtils;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
 import static android.support.test.espresso.Espresso.*;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
@@ -65,12 +69,14 @@ public class ExampleEspressoUiTest extends ActivityInstrumentationTestCase2<Main
 		// tearDown...
 	}
 
+
 	public void testSimpleExampleTestPass() {
 
 		// testMethods must start with "testXXXX" where XXXX is the last part of the function name
 		UiTestUtils.createEmptyProject();
 		onView(withId(R.id.main_menu_button_new)).perform(click());
 	}
+
 
 	public void testSimpleExampleTestFail() {
 
