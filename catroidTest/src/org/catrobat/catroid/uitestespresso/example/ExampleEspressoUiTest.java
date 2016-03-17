@@ -28,7 +28,6 @@ import android.test.ActivityInstrumentationTestCase2;
 import org.catrobat.catroid.R;
 import org.catrobat.catroid.ui.MainMenuActivity;
 import org.catrobat.catroid.uitest.util.UiTestUtils;
-
 import static android.support.test.espresso.Espresso.*;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
@@ -79,4 +78,5 @@ public class ExampleEspressoUiTest extends ActivityInstrumentationTestCase2<Main
 		UiTestUtils.createEmptyProject();
 		onView(withId(R.id.brick_add_item_to_userlist_edit_text)).perform(click());
 	}
+
 }
