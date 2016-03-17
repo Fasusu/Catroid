@@ -24,10 +24,6 @@ package org.catrobat.catroid.uitestespresso.example;
 
 
 import android.support.test.InstrumentationRegistry;
-<<<<<<< HEAD
-import android.support.test.runner.AndroidJUnit4;
-=======
->>>>>>> b9e34a101ca0dd73cbd557ab152b033bef2e02fd
 import android.test.ActivityInstrumentationTestCase2;
 import org.catrobat.catroid.R;
 import org.catrobat.catroid.ui.MainMenuActivity;
