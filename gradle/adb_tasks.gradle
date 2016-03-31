@@ -77,7 +77,8 @@ def executeShellCommand(command) {
     process.inputStream.eachLine {println it}
     process.waitFor()
 
-    println "Checking reult..."
+    println "Checking reult... ExitValue: " + process.exitValue()
+    
     if(isEspressoTestPackage(System.properties['testPackage'].toString())) {
         println "IsEspressoTestPackage returned TRUE"
     } else {
