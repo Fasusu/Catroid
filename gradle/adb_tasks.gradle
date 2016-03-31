@@ -58,16 +58,17 @@ def getAndroidDevice() {
 
 def isEspressoTestPackage(String testPackage) {
 
-        // parse parameter to determine if espresso test runner is needed
-        String[] testPackageParts = testPackage.split('[.]')
-        println "Testpackageparts: " + testpackageParts
-        if (testPackageParts && testPackageParts.size() > 3 && testPackageParts[3] == "uitestespresso") {
-            println "IsEspressoTestPackage returned TRUE"
-            return true
-        } else {
-            println "IsEspressoTestPackage returned FALSE"
-            return false
-        }
+    // parse parameter to determine if espresso test runner is needed
+    String[] testPackageParts = testPackage.split('[.]')
+    println "Testpackageparts: " + testPackageParts
+
+    if (testPackageParts && testPackageParts.size() > 3 && testPackageParts[3] == "uitestespresso") {
+        println "IsEspressoTestPackage returned TRUE"
+        return true
+    } else {
+        println "IsEspressoTestPackage returned FALSE"
+        return false
+    }
 }
 
 def executeShellCommand(command) {
