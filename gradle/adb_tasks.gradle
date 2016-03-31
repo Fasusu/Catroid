@@ -75,7 +75,14 @@ def executeShellCommand(command) {
     def process = new ProcessBuilder(command).redirectErrorStream(true).start()
     process.inputStream.eachLine {println it}
     process.waitFor()
+
     println "Checking reult..."
+    if(isEspressoTestPackage(System.properties['testPackage'].toString())) {
+        println "IsEspressoTestPackage returned TRUE"
+    } else {
+        println "IsEspressoTestPackage returned FALSE"
+    }
+
     if (isEspressoTestPackage(System.properties['testPackage'].toString()) && process.exitValue() != 0 && process.exitValue() != 1){
         println "Was espresso Result "
         throw new GradleScriptException("adb exited with exit status ${process.exitValue()}", null)
